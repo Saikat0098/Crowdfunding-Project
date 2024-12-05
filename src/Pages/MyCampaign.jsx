@@ -21,14 +21,14 @@ const MyCampaign = () => {
   console.log(campaign);
 
   const handleDelete = (id) => {
-    console.log(id);
+ 
 
     fetch(`http://localhost:5500/addCampaignData/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+       
       });
   };
 

@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const UpdateCampaign = () => {
   const updateData =  useLoaderData();
 
+  const {_id , title } = updateData;
+
+  const {user} = useContext(AuthContext)
+
   const handleUpdate = (e)=>{
     e.preventDefault();
-    const name = e.target.name.value;
-    const photo = e.target.photo.value;  
+     
     const formData = new FormData(e.target);
-    const  updateData = Object.fromEntries(formData.entries());
+    const  updateDataCampaign = Object.fromEntries(formData.entries());
+
+    console.log(updateData);
+
+
+    fetch(`http://localhost:5500/addCampaignData/${_id}` , {
+      method:"PUT" ,
+      headers:{
+          'content-type' : 'application/json'
+      } ,
+      body: JSON.stringify(updateDataCampaign)
+   })
+   .then(res => res.json())
+   .then(data => {
+       console.log(data);
+    })
+
   }
  
-  console.log(updateData  );
+  // console.log(updateData  );
     return (
         <div>
               <div className="min-h-screen mt-11 p-8 bg-sky-100 flex justify-center items-center">
@@ -42,7 +62,7 @@ const UpdateCampaign = () => {
             <input
               type="text"
               name="title"
-              defaultValue={updateData.title}
+              defaultValue={title}
               placeholder="Campaign title"
               className="input input-bordered w-full"
               required
@@ -124,7 +144,7 @@ const UpdateCampaign = () => {
               <input
                 type="email"
                 name="userEmail"
-                // value={user?.email}
+                value={user?.email}
                 
                 className="input input-bordered w-full bg-gray-100"
                 readOnly
@@ -137,7 +157,7 @@ const UpdateCampaign = () => {
               <input
                 type="text"
                 name="userName"
-                // value={userName}
+                value={user?.displayName}
                 className="input input-bordered w-full bg-gray-100"
                 readOnly
               />
