@@ -9,6 +9,7 @@ import CampaignCard from "../Compnents/CampaignCards";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import CampaignDetails from "../Pages/CampaignDetails";
+import UpdateCampaign from "../Pages/UpdateCampaign";
  
 
  
@@ -60,6 +61,13 @@ import CampaignDetails from "../Pages/CampaignDetails";
                 path:'campaignDetails/:_id' , 
                 element:<CampaignDetails></CampaignDetails> , 
                 loader: ()=> fetch(`http://localhost:5500/addCampaignData/`)
+            } , 
+            {
+                path:'updateCampaign/:_id' ,
+                element: <UpdateCampaign></UpdateCampaign> , 
+                loader: ({params}) => fetch(`http://localhost:5500/addCampaignData/${params._id}`)
+
+                
             }
 
         ]

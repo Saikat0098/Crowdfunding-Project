@@ -26,6 +26,7 @@ const CampaignCard = ({ campaignCard }) => {
             <div className="badge    w-36">#{type}</div>
           </h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p className="text-[0.900rem]">Deadline : {deadline}</p>
           <div className="card-actions justify-end">
              <Link to={`/campaignDetails/${_id}`}>
              <button

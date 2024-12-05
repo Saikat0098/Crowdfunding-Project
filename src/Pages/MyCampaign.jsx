@@ -1,74 +1,36 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { RxUpdate } from "react-icons/rx";
+import { MdDeleteSweep } from "react-icons/md";
 
 const MyCampaign = () => {
-
   const { user, setUser, userUid, setUserUid, monUserId, setMonUserId } =
     useContext(AuthContext);
 
-    const campaignData = useLoaderData() ; 
- 
- 
-    const currentUserCampaign = campaignData.filter(info => info.userEmail === user?.email )
- 
- console.log(currentUserCampaign);
-    
-    const [campaign , setCampaign ] = useState(currentUserCampaign) ; 
+  const campaignData = useLoaderData();
 
-   console.log(campaign);
- 
+  const currentUserCampaign = campaignData.filter(
+    (info) => info.userEmail === user?.email
+  );
 
-  // const data = [
-  //   {
-  //     name: "Vincent Williamson",
-  //     age: 31,
-  //     job: "iOS Developer",
-  //     location: "Washington",
-  //   },
-  //   {
-  //     name: "Tyler Reyes",
-  //     age: 22,
-  //     job: "UI/UX Designer",
-  //     location: "New York",
-  //   },
-  //   {
-  //     name: "Justin Block",
-  //     age: 26,
-  //     job: "Front-End Developer",
-  //     location: "Los Angeles",
-  //   },
-  //   {
-  //     name: "Sean Quarman",
-  //     age: 25,
-  //     job: "Web Designer",
-  //     location: "San Francisco",
-  //   },
-  //   {
-  //     name: "Keith Cartor",
-  //     age: 20,
-  //     job: "Graphic Designer",
-  //     location: "New York, NY",
-  //   },
-  //   {
-  //     name: "Austin Medina",
-  //     age: 32,
-  //     job: "Photographer",
-  //     location: "New York",
-  //   },
-  //   {
-  //     name: "Adam Henderson",
-  //     age: 35,
-  //     job: "UI/UX Designer",
-  //     location: "Washington",
-  //   },
-  //   {
-  //     name: "Louis Smith",
-  //     age: 27,
-  //     job: "Photographer",
-  //     location: "San Francisco",
-  //   },
-  // ];
+  console.log(currentUserCampaign);
+
+  const [campaign, setCampaign] = useState(currentUserCampaign);
+
+  console.log(campaign);
+
+  const handleDelete = (id) => {
+    console.log(id);
+
+    fetch(`http://localhost:5500/addCampaignData/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div className="overflow-x-auto p-6 bg-blue-100 min-h-screen flex items-center justify-center">
@@ -93,12 +55,26 @@ const MyCampaign = () => {
               <td className="p-3">{data.title}</td>
               <td className="p-3">{data.deadline}</td>
               <td className="p-3">{data.minDonation}</td>
-              <td className="p-3"><Link>
-                  Update 
-              </Link></td>
+              <td className="p-3">
+                <Link to={`/updateCampaign/${data._id}`}>
+                  <button>
+                    {" "}
+                    <RxUpdate
+                      size={"25px"}
+                      className="hover:bg-green-500 rounded-full"
+                    />
+                  </button>
+                </Link>
+              </td>
               <td className="p-3">
                 <Link>
-                  Delete
+                  <button onClick={() => handleDelete(data._id)}>
+                    {" "}
+                    <MdDeleteSweep
+                      size={"42px"}
+                      className="hover:bg-red-500 p-2 rounded-full"
+                    />
+                  </button>
                 </Link>
               </td>
             </tr>
