@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const CampaignDetails = () => {
   const navigate = useNavigate();
 
+  const {user}= useContext(AuthContext) ; 
+  const email = user?.email ; 
+ 
+
   const singleCampaignData = useLoaderData();
   const { _id ,  } = useParams();
   let details = singleCampaignData?.find((single) => single._id == _id);
-  const {type , title , minDonation , thumbnail , description} = details ; 
+  const {type , title , minDonation , thumbnail ,  description} = details ; 
 
 
   const handelDonation = ()=>{
-    const myDonationDetails = { title , type , minDonation , thumbnail , description} ; 
+    const myDonationDetails = { title , type , minDonation , email ,  thumbnail , description} ; 
     console.log(myDonationDetails);
 
     fetch('http://localhost:5500/myDonation' , {

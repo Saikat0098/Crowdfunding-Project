@@ -46,7 +46,8 @@ import UpdateCampaign from "../Pages/UpdateCampaign";
             } , 
             {
                 path:'myDonations' , 
-                element:<MyDonations></MyDonations>
+                element:<MyDonations></MyDonations> , 
+                loader: ()=> fetch('http://localhost:5500/myDonation')
             } , 
             {
                 path:'login',

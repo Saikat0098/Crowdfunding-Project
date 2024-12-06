@@ -8,7 +8,8 @@ const MyCampaign = () => {
   const { user, setUser, userUid, setUserUid, monUserId, setMonUserId } =
     useContext(AuthContext);
 
-  const campaignData = useLoaderData();
+  const campaignData = useLoaderData(); 
+
 
   const currentUserCampaign = campaignData.filter(
     (info) => info.userEmail === user?.email

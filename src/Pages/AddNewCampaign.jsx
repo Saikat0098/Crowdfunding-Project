@@ -28,7 +28,7 @@ const AddNewCampaign = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        
         // const users = result.user ; 
         //  setUser(users)
          navigate('/')
@@ -56,7 +56,7 @@ const AddNewCampaign = () => {
             />
           </div>
 
-          {/* Campaign Title */}
+     
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Title</span>
@@ -70,7 +70,7 @@ const AddNewCampaign = () => {
             />
           </div>
 
-          {/* Campaign Type */}
+         
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Type</span>
@@ -90,7 +90,7 @@ const AddNewCampaign = () => {
             </select>
           </div>
 
-          {/* Description */}
+   
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Description</span>
@@ -104,7 +104,7 @@ const AddNewCampaign = () => {
             ></textarea>
           </div>
 
-          {/* Inline Row: Minimum Donation and Deadline */}
+     
           <div className="grid grid-cols-2 gap-2">
             <div className="form-control">
               <label className="label">
@@ -131,8 +131,7 @@ const AddNewCampaign = () => {
               />
             </div>
           </div>
-
-          {/* Inline Row: User Email and Name */}
+ 
           <div className="grid grid-cols-2 gap-2">
             <div className="form-control">
               <label className="label">
