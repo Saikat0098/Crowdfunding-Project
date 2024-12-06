@@ -17,7 +17,7 @@ const MyDonations = () => {
  
 
   return (
-    <div className='w-10/12 mx-auto'>
+    <div className=''>
       {user?.email ? <div className=" mx-auto grid md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 p-6 bg-gray-100 min-h-screen">
       {myDonation.map((card, index) => (
         <div

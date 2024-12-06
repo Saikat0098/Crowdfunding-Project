@@ -33,9 +33,11 @@ const AllCampaign = () => {
                 <td className="p-3">{data.deadline}</td>
                 <td className="p-3 text-center">{data.minDonation}</td>
                 
-                <td className="p-3">
+                <td className="p-2 md:p-3">
                   <Link to={`/campaignDetails/${data._id}`}>
-                    <button className="bg-[#3B9DF8] hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-colors">
+                    <button className="bg-[#3B9DF8] hover:bg-blue-700 text-white font-medium 
+                    
+                    md:py-3 md:px-6 rounded-full shadow-lg transition-colors">
                       See More &rarr;
                     </button>
                   </Link>

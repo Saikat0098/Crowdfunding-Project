@@ -1,43 +1,46 @@
-import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const CampaignCard = ({ campaignCard }) => {
- 
-
- 
-
-  const {thumbnail , title , type , description , minDonation , deadline , _id } = campaignCard ; 
-
- 
-  // const deadlineOver = {new Date(deadline).toLocaleString()}
+  const { thumbnail, title, type, description, minDonation, deadline, _id } = campaignCard;
 
   return (
-    <div>
-      <div className="card bg-base-100 w-96 h-[460px] shadow-xl">
-        <figure className="h-60">
+    <div className="flex justify-center">
+      <div className="group relative bg-gradient-to-b from-white to-gray-50 w-full sm:w-80 md:w-96 shadow-xl rounded-lg overflow-hidden transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
+        {/* Image Section */}
+        <figure className="relative h-60 overflow-hidden">
           <img
             src={thumbnail}
-            alt="image"
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
           />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            {title}
-            <div className="badge    w-36">#{type}</div>
-          </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <p className="text-[0.900rem]">Deadline : {deadline}</p>
-          <div className="card-actions justify-end">
-             <Link to={`/campaignDetails/${_id}`}>
-             <button
-          
-          className="bg-[#3B9DF8] hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-colors"
-        >
-           See More &rarr;
-        </button>
-             </Link>
+          <div className="absolute top-4 right-4 bg-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full shadow-md">
+            #{type}
           </div>
+        </figure>
+
+        {/* Card Content */}
+        <div className="p-5 space-y-4">
+          <h2 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition duration-300">
+            {title}
+          </h2>
+          <p className="text-gray-600 text-sm line-clamp-3">{description}</p>
+          <div className="flex justify-between text-sm text-gray-500">
+            <span>
+              <strong>Deadline:</strong> {new Date(deadline).toLocaleDateString()}
+            </span>
+            <span>
+              <strong>Min Donation:</strong> <span className="text-blue-600">${minDonation}</span>
+            </span>
+          </div>
+        </div>
+
+        {/* Footer Action */}
+        <div className="px-5 py-4 bg-gray-100 border-t">
+          <Link to={`/campaignDetails/${_id}`}>
+            <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-2 rounded-md shadow-md transition duration-300">
+              See More &rarr;
+            </button>
+          </Link>
         </div>
       </div>
     </div>

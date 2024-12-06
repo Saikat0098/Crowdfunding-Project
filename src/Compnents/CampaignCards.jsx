@@ -17,10 +17,13 @@ import CampaignCard from "./CampaignCard";
     return (
      
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 ">
+        <div>
+            <h2 className="font-bold text-3xl pb-10 text-center">Running Campaign </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 ">
            {
                campaignCards.slice(0-6).map(campaignCard => <CampaignCard key={campaignCard._id} campaignCard={campaignCard}></CampaignCard>)
            }
+        </div>
         </div>
     );
 };
