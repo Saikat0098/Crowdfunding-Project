@@ -1,18 +1,19 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddNewCampaign = () => {
-  const { user ,  monUserId, setMonUserId, setUser } = useContext(AuthContext);
+  const { user ,  setUser } = useContext(AuthContext);
 
- // const userEmail = "user@example.com"; // Replace with dynamic data if needed
-  const userName = "John Doe"; // Replace with dynamic data if needed
-  const userUID = monUserId;
+  const navigate = useNavigate();
+  
+  const userName = user?.displayName 
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const addCampaign = Object.fromEntries(formData.entries());
-    console.log(addCampaign);
+     
 
     // console.log(user);
 
@@ -28,9 +29,10 @@ const AddNewCampaign = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
-        const users = result.user ; 
-         setUser(users)
-        setMonUserId(userUID);
+        // const users = result.user ; 
+        //  setUser(users)
+         navigate('/')
+         
         // console.log(userUID);
       });
   };
@@ -155,9 +157,7 @@ const AddNewCampaign = () => {
                 className="input input-bordered w-full bg-gray-100"
                 readOnly
               />
-              <div className="hidden">
-                <input type="text" name="userUID" value={userUID} />
-              </div>
+               
             </div>
           </div>
 

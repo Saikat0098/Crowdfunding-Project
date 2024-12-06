@@ -5,8 +5,28 @@ const CampaignDetails = () => {
   const navigate = useNavigate();
 
   const singleCampaignData = useLoaderData();
-  const { _id } = useParams();
+  const { _id ,  } = useParams();
   let details = singleCampaignData?.find((single) => single._id == _id);
+  const {type , title , minDonation , thumbnail , description} = details ; 
+
+
+  const handelDonation = ()=>{
+    const myDonationDetails = { title , type , minDonation , thumbnail , description} ; 
+    console.log(myDonationDetails);
+
+    fetch('http://localhost:5500/myDonation' , {
+      method: "POST",
+      headers:{
+        "Content-type" : "application/json"
+      } , 
+      body:JSON.stringify(myDonationDetails)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+  }
+  
 
   //   console.log(singleCampaignData.title);
 
@@ -32,7 +52,7 @@ const CampaignDetails = () => {
 
         
           <Link to=''>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-colors  ">
+            <button onClick={handelDonation} className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-colors  ">
               Donate Now &rarr;
             </button>
           </Link>

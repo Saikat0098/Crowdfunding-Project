@@ -5,6 +5,8 @@ import { Link, Navigate, useLocation ,  } from "react-router-dom";
  
 
 const SignUp = () => {
+
+ 
  
     const {createNewUser , setUser , updateUserProfile } = useContext(AuthContext)
    
@@ -21,7 +23,7 @@ const SignUp = () => {
 
             updateUserProfile({ displayName: name, photoURL: photo })
             .then((result) => {
-               console.log(result);
+              
             })
             .catch((err) => {
               console.log(err);
