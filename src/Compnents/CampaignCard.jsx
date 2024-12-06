@@ -10,6 +10,7 @@ const CampaignCard = ({ campaignCard }) => {
   const {thumbnail , title , type , description , minDonation , deadline , _id } = campaignCard ; 
 
  
+  // const deadlineOver = {new Date(deadline).toLocaleString()}
 
   return (
     <div>

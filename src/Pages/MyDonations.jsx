@@ -11,17 +11,15 @@ const MyDonations = () => {
 
   const myDonationData = useLoaderData() ; 
 
- 
+  const myDonation = myDonationData.filter(info => info.email === user?.email ) ; 
 
 
-
-  // const donationData = myDonationData.filter(donationInfo => donationInfo.email === user.email) ; 
  
 
   return (
     <div className='w-10/12 mx-auto'>
       {user?.email ? <div className=" mx-auto grid md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 p-6 bg-gray-100 min-h-screen">
-      {myDonationData.map((card, index) => (
+      {myDonation.map((card, index) => (
         <div
           key={index}
           className="w-64 bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all hover:scale-105"
