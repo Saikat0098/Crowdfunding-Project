@@ -11,7 +11,7 @@ const AllCampaign = () => {
         <table className="table w-full max-w-4xl border-separate border-spacing-0">
           <thead>
             <tr className="bg-blue-500 text-white">
-              
+            <th className="p-3 text-left">Number</th>
               <th className="p-3 text-left">Title</th>
               <th className="p-3 text-left">Date</th>
               <th className="p-3 text-left">Main Donation</th>
@@ -28,11 +28,11 @@ const AllCampaign = () => {
                 } hover:bg-blue-200 transition-colors`}
               >
                 
-               
+                <td className="p-3">{index + 1 }</td>
                 <td className="p-3">{data.title}</td>
                 <td className="p-3">{data.deadline}</td>
                 <td className="p-3 text-center">{data.minDonation}</td>
-              
+                
                 <td className="p-3">
                   <Link to={`/campaignDetails/${data._id}`}>
                     <button className="bg-[#3B9DF8] hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-colors">
