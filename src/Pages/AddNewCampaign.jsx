@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddNewCampaign = () => {
   const { user ,  setUser } = useContext(AuthContext);
@@ -28,10 +29,19 @@ const AddNewCampaign = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+       if(result.insertedId){
+        Swal.fire({
+          title: 'success!',
+          text: 'Do you want to continue',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+        navigate('/allCampaign')
+       }
         
         // const users = result.user ; 
         //  setUser(users)
-         navigate('/')
+        
          
         // console.log(userUID);
       });
