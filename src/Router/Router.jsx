@@ -10,6 +10,7 @@ import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import CampaignDetails from "../Pages/CampaignDetails";
 import UpdateCampaign from "../Pages/UpdateCampaign";
+import PrivetRout from "./PrivetRout";
  
 
  
@@ -31,22 +32,23 @@ import UpdateCampaign from "../Pages/UpdateCampaign";
             } , 
             {
                 path:'addNewCampaign' , 
-                element: <AddNewCampaign></AddNewCampaign>
+                element: <PrivetRout>
+                    <AddNewCampaign></AddNewCampaign>
+                </PrivetRout>
             } , 
-            // {
-            //     path:'campaignCard' , 
-            //     element:<CampaignCard></CampaignCard> , 
-            //     loader: ()=> fetch('http://localhost:5500/addCampaignData')
-
-            // } , 
+            
             {
                 path:'myCampaign' , 
-                element: <MyCampaign></MyCampaign> , 
+                element: <PrivetRout>
+                    <MyCampaign></MyCampaign>
+                </PrivetRout> , 
                 loader: ()=> fetch('http://localhost:5500/addCampaignData')
             } , 
             {
                 path:'myDonations' , 
-                element:<MyDonations></MyDonations> , 
+                element:<PrivetRout>
+                    <MyDonations></MyDonations>
+                </PrivetRout> , 
                 loader: ()=> fetch('http://localhost:5500/myDonation')
             } , 
             {
