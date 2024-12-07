@@ -42,14 +42,16 @@ const MyDonations = () => {
                 <h2 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition duration-300">
                   {card.title}
                 </h2>
-                <p className="text-gray-600 text-sm line-clamp-3">{card.description}</p>
+                <p className="text-gray-600 text-sm  ">{card.description}</p>
                 <div className="flex justify-between text-sm text-gray-500">
-                  <span>
-                    <strong>Deadline:</strong> {new Date(card.deadline).toLocaleDateString()}
-                  </span>
+                 
                   <span>
                     <strong>Min Donation:</strong> <span className="text-blue-600">${card.minDonation}</span>
                   </span>
+                </div>
+                <div className='space-y-2'>
+                  <strong className='"text-gray-600 text-sm  '>Donated By:{user?.displayName}</strong>
+                  <p>Email: {user?.email}</p>
                 </div>
               </div>
         
