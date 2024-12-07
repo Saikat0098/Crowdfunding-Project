@@ -10,7 +10,7 @@ const PrivetRout = ({children}) => {
     const location = useLocation()
     
     if(loading){
-         <Loading></Loading>
+        return <Loading></Loading>
     }
      if(user && user?.email){
         return children ; 

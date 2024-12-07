@@ -33,22 +33,26 @@ const CampaignContact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
               type="text"
+              required
               placeholder="Your Name *"
               className="input input-bordered w-full focus:outline-none focus:ring focus:ring-blue-400"
             />
             <input
               type="email"
+              required
               placeholder="Your Email *"
               className="input input-bordered w-full focus:outline-none focus:ring focus:ring-blue-400"
             />
           </div>
           <input
             type="text"
+            required
             placeholder="Your Subject"
             className="input input-bordered w-full focus:outline-none focus:ring focus:ring-blue-400"
           />
           <textarea
             placeholder="Your message"
+            required
             className="textarea textarea-bordered w-full focus:outline-none focus:ring focus:ring-blue-400"
             rows="4"
           ></textarea>
