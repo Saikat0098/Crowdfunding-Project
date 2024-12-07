@@ -1,4 +1,5 @@
 import CampaignCard from "../Compnents/CampaignCards";
+import CampaignContact from "../Compnents/CampaignContact ";
 import ExploreCategories from "../Compnents/ExploreCategories ";
 import HeroSection from "../Compnents/HeroSection ";
 
@@ -17,6 +18,9 @@ const Home = () => {
                 <CampaignCard></CampaignCard>
                 </div>
                 <ExploreCategories></ExploreCategories>
+                <div>
+                    <CampaignContact></CampaignContact>
+                </div>
              </main>
              
         </div>

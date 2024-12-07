@@ -172,7 +172,7 @@ const HeroSection = () => {
             {/* right blur shadow */}
             <div className="w-[100px] h-[100px] bg-[#DC0155] blur-[90px] absolute bottom-[80px] right-[80px]"></div>
           </div></SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+      
        
       </Swiper>
     </div>
