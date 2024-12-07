@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 const CampaignCard = ({ campaignCard }) => {
   const { thumbnail, title, type, description, minDonation, deadline, _id } = campaignCard;
 
+  const currentDate = new Date();
+  const deadlineDate = new Date(deadline);
+
+  const isDeadlineOver = deadlineDate > currentDate;
+
+  // If the deadline is over, return nothing
+  if (!isDeadlineOver) {
+    return null;
+  }
+
   return (
     <div className="flex justify-center">
       <div className="group relative bg-gradient-to-b from-white to-gray-50 w-full sm:w-80 md:w-96 shadow-xl rounded-lg overflow-hidden transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
