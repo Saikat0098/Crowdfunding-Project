@@ -62,7 +62,7 @@ const SignUp = () => {
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100 px-4">
       <div className="flex flex-col md:flex-row w-full max-w-[850px] shadow-lg rounded-lg overflow-hidden">
-        {/* Left Panel */}
+      
         <div className="flex-1 bg-gradient-to-b from-blue-400 to-blue-500 p-8 text-white flex flex-col justify-center items-center md:items-start">
           <div className="text-center md:text-left">
             <h1 className="text-2xl md:text-3xl font-bold mb-4">Welcome!</h1>
@@ -72,7 +72,7 @@ const SignUp = () => {
           </div>
         </div>
 
-        {/* Right Panel */}
+   
         <div className="flex-1 bg-white p-8 md:p-10 flex flex-col justify-center">
           <h2 className="text-xl md:text-2xl font-bold text-[#3B9DF8] text-center mb-4">
             Sign Up

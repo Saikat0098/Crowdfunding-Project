@@ -11,6 +11,7 @@ import SignUp from "../Pages/SignUp";
 import CampaignDetails from "../Pages/CampaignDetails";
 import UpdateCampaign from "../Pages/UpdateCampaign";
 import PrivetRout from "./PrivetRout";
+import NotFound from "../Pages/NotFound";
  
 
  
@@ -28,7 +29,7 @@ import PrivetRout from "./PrivetRout";
             {
                 path: 'allCampaign' , 
                 element: <AllCampaign></AllCampaign> , 
-                loader: ()=> fetch('http://localhost:5500/addCampaignData')
+                loader: ()=> fetch('https://help-people-server-side.vercel.app/addCampaignData')
             } , 
             {
                 path:'addNewCampaign' , 
@@ -42,14 +43,14 @@ import PrivetRout from "./PrivetRout";
                 element: <PrivetRout>
                     <MyCampaign></MyCampaign>
                 </PrivetRout> , 
-                loader: ()=> fetch('http://localhost:5500/addCampaignData')
+                loader: ()=> fetch('https://help-people-server-side.vercel.app/addCampaignData')
             } , 
             {
                 path:'myDonations' , 
                 element:<PrivetRout>
                     <MyDonations></MyDonations>
                 </PrivetRout> , 
-                loader: ()=> fetch('http://localhost:5500/myDonation')
+                loader: ()=> fetch('https://help-people-server-side.vercel.app/myDonation')
             } , 
             {
                 path:'login',
@@ -63,15 +64,19 @@ import PrivetRout from "./PrivetRout";
             {
                 path:'campaignDetails/:_id' , 
                 element:<CampaignDetails></CampaignDetails> , 
-                loader: ()=> fetch(`http://localhost:5500/addCampaignData/`)
+                loader: ()=> fetch(`https://help-people-server-side.vercel.app/addCampaignData/`)
             } , 
             {
                 path:'updateCampaign/:_id' ,
                 element: <UpdateCampaign></UpdateCampaign> , 
-                loader: ({params}) => fetch(`http://localhost:5500/addCampaignData/${params._id}`)
+                loader: ({params}) => fetch(`https://help-people-server-side.vercel.app/addCampaignData/${params._id}`)
 
                 
-            }
+            } , 
+            {
+                path: '*' , 
+                element : <NotFound></NotFound>
+              } ,
 
         ]
      }

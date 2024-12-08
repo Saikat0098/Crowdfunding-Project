@@ -32,7 +32,7 @@ const HeroSection = () => {
       >
         <SwiperSlide>
           <div className="w-full bg-[#fff] rounded-md relative">
-            {/* header */}
+             
             <header className="flex lg:flex-row flex-col items-center gap-12 lg:gap-0 justify-between px-8 mt-10">
               <div>
                 <div className="w-full lg:w-[80%]">
@@ -73,14 +73,13 @@ const HeroSection = () => {
                 <img className="path" src={Hero} alt="" />
               </div>
             </header>
-
-            {/* right blur shadow */}
+ 
             <div className="w-[100px] h-[100px] bg-[#DC0155] blur-[90px] absolute bottom-[80px] right-[80px]"></div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full bg-[#fff] rounded-md relative">
-            {/* header */}
+         
             <header className="flex lg:flex-row flex-col items-center gap-12 lg:gap-0 justify-between px-8 mt-10">
               <div>
                 <div className="w-full lg:w-[80%]">
@@ -122,12 +121,12 @@ const HeroSection = () => {
               </div>
             </header>
 
-            {/* right blur shadow */}
+        
             <div className="w-[100px] h-[100px] bg-[#DC0155] blur-[90px] absolute bottom-[80px] right-[80px]"></div>
           </div>
         </SwiperSlide>
         <SwiperSlide>  <div className="w-full bg-[#fff] rounded-md relative">
-            {/* header */}
+          
             <header className="flex lg:flex-row flex-col items-center gap-12 lg:gap-0 justify-between px-8 mt-10">
               <div>
                 <div className="w-full lg:w-[80%]">
@@ -168,8 +167,7 @@ const HeroSection = () => {
                 <img className="path" src={Hero3} alt="" />
               </div>
             </header>
-
-            {/* right blur shadow */}
+ 
             <div className="w-[100px] h-[100px] bg-[#DC0155] blur-[90px] absolute bottom-[80px] right-[80px]"></div>
           </div></SwiperSlide>
       

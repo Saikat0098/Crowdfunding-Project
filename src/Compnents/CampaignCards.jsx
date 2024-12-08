@@ -11,7 +11,7 @@ import CampaignCard from "./CampaignCard";
     .filter((campaign) => new Date(campaign.deadline) > currentDate)
 
     useEffect(()=>{
-        fetch('http://localhost:5500/addCampaignData')
+        fetch('https://help-people-server-side.vercel.app/addCampaignData')
         .then(res => res.json())
         .then(data =>  setCampaignCards(data))
     },[])

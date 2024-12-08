@@ -16,11 +16,9 @@ const AddNewCampaign = () => {
     const addCampaign = Object.fromEntries(formData.entries());
      
 
-    // console.log(user);
+    ;
 
-    // console.log(addCampaign);
-
-    fetch("http://localhost:5500/addCampaignData", {
+    fetch("https://help-people-server-side.vercel.app/addCampaignData", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,11 +37,7 @@ const AddNewCampaign = () => {
         navigate('/allCampaign')
        }
         
-        // const users = result.user ; 
-        //  setUser(users)
-        
-         
-        // console.log(userUID);
+       
       });
   };
 

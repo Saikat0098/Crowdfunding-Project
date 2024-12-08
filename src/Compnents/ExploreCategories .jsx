@@ -1,4 +1,4 @@
-import React from "react";
+ 
 import { FaUserAlt, FaLightbulb, FaBriefcase, FaPaintBrush } from "react-icons/fa";
 
 const ExploreCategories = () => {

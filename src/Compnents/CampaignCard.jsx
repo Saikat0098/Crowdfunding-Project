@@ -7,8 +7,7 @@ const CampaignCard = ({ campaignCard }) => {
   const deadlineDate = new Date(deadline);
 
   const isDeadlineOver = deadlineDate > currentDate;
-
-  // If the deadline is over, return nothing
+ 
   if (!isDeadlineOver) {
     return null;
   }

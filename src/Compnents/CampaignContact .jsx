@@ -22,7 +22,7 @@ const CampaignContact = () => {
         <p className="text-green-400 text-sm uppercase font-semibold">Upcoming Events</p>
         <h2 className="text-4xl font-bold mt-4">Startup Campaign Starts In:</h2>
         <p className="text-gray-400 mt-6 leading-relaxed">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        The Startup Campaign is just around the corner, starting in 10 days! 
         </p>
         <p className="mt-8 text-2xl font-semibold text-red-500">Expired</p>
       </div>

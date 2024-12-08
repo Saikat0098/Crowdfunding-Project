@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { RxUpdate } from "react-icons/rx";
 import { MdDeleteSweep } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const MyCampaign = () => {
   const { user, setUser, userUid, setUserUid, monUserId, setMonUserId } =
@@ -15,23 +16,50 @@ const MyCampaign = () => {
     (info) => info.userEmail === user?.email
   );
 
-  console.log(currentUserCampaign);
+ 
 
-  const [campaign, setCampaign] = useState(currentUserCampaign);
+  const [campaigns, setCampaigns] = useState(currentUserCampaign);
+  // const [deleteStore , setDeleteStore ] = useState([])
 
-  console.log(campaign);
+  const dataMapig = campaigns.map(data => data )
+ 
+  
+  
 
   const handleDelete = (id) => {
  
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://help-people-server-side.vercel.app/addCampaignData/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if(data.deletedCount > 0){
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              const remaining = campaigns.filter(data => data._id !== id) ; 
+              setCampaigns(remaining)
+            }
+          });
+      }
+    });
 
-    fetch(`http://localhost:5500/addCampaignData/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-       
-      });
+    
   };
+
+ 
 
   return (
     <div className="overflow-x-auto p-6 bg-blue-100 min-h-screen flex items-center justify-center">
@@ -46,7 +74,7 @@ const MyCampaign = () => {
           </tr>
         </thead>
         <tbody>
-          {currentUserCampaign.map((data, index) => (
+          {campaigns.map((data, index) => (
             <tr
               key={index}
               className={`${

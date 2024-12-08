@@ -24,9 +24,9 @@ const CampaignDetails = () => {
       thumbnail,
       description,
     };
-    console.log(myDonationDetails);
+ 
 
-    fetch("http://localhost:5500/myDonation", {
+    fetch("https://help-people-server-side.vercel.app/myDonation", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -48,7 +48,7 @@ const CampaignDetails = () => {
       });
   };
 
-  //   console.log(singleCampaignData.title);
+ 
 
   return (
     <div className="flex justify-center py-6">

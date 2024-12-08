@@ -15,10 +15,10 @@ const UpdateCampaign = () => {
     const formData = new FormData(e.target);
     const  updateDataCampaign = Object.fromEntries(formData.entries());
 
-    console.log(updateData);
+    
 
 
-    fetch(`http://localhost:5500/addCampaignData/${_id}` , {
+    fetch(`https://help-people-server-side.vercel.app/addCampaignData/${_id}` , {
       method:"PUT" ,
       headers:{
           'content-type' : 'application/json'
@@ -32,7 +32,7 @@ const UpdateCampaign = () => {
 
   }
  
-  // console.log(updateData  );
+ 
     return (
         <div>
               <div className="min-h-screen mt-11 p-8 bg-sky-100 flex justify-center items-center">
@@ -54,7 +54,7 @@ const UpdateCampaign = () => {
             />
           </div>
 
-          {/* Campaign Title */}
+         
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Title</span>
@@ -69,7 +69,7 @@ const UpdateCampaign = () => {
             />
           </div>
 
-          {/* Campaign Type */}
+          
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Type</span>
@@ -105,7 +105,7 @@ const UpdateCampaign = () => {
             ></textarea>
           </div>
 
-          {/* Inline Row: Minimum Donation and Deadline */}
+          
           <div className="grid grid-cols-2 gap-2">
             <div className="form-control">
               <label className="label">
@@ -135,7 +135,7 @@ const UpdateCampaign = () => {
             </div>
           </div>
 
-          {/* Inline Row: User Email and Name */}
+          {/*  User Email and Name */}
           <div className="grid grid-cols-2 gap-2">
             <div className="form-control">
               <label className="label">
