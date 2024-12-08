@@ -83,7 +83,7 @@ const HeroSection = () => {
             <header className="flex lg:flex-row flex-col items-center gap-12 lg:gap-0 justify-between px-8 mt-10">
               <div>
                 <div className="w-full lg:w-[80%]">
-                  <p>Hi there!</p>
+                  <p>Hi there</p>
                   <h1 className="text-[40px] sm:text-[40px] font-semibold leading-[45px] sm:leading-[70px]">
                     <span className="text-[#3B9DF8]">Comparing the</span> a
                      Top Online Crowdfunding Platforms

@@ -15,7 +15,7 @@ const CampaignCard = ({ campaignCard }) => {
   return (
     <div className="flex justify-center">
       <div className="group relative bg-gradient-to-b from-white to-gray-50 w-full sm:w-80 md:w-96 shadow-xl rounded-lg overflow-hidden transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
-        {/* Image Section */}
+       
         <figure className="relative h-60 overflow-hidden">
           <img
             src={thumbnail}
@@ -27,7 +27,7 @@ const CampaignCard = ({ campaignCard }) => {
           </div>
         </figure>
 
-        {/* Card Content */}
+        
         <div className="p-5 space-y-4">
           <h2 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition duration-300">
             {title}
@@ -43,7 +43,7 @@ const CampaignCard = ({ campaignCard }) => {
           </div>
         </div>
 
-        {/* Footer Action */}
+       
         <div className="px-5 py-4 bg-gray-100 border-t">
           <Link to={`/campaignDetails/${_id}`}>
             <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-2 rounded-md shadow-md transition duration-300">

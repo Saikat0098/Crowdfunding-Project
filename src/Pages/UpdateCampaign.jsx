@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const UpdateCampaign = () => {
   const updateData =  useLoaderData();
@@ -27,9 +28,22 @@ const UpdateCampaign = () => {
    })
    .then(res => res.json())
    .then(data => {
-       console.log(data);
+    if(data.insertedId){
+      Swal.fire({
+        title: 'success!',
+        text: 'Do you want to continue',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      }
+   
+    )
+    form.rest()
+      
+     }
+     
     })
-
+    
+    
   }
  
  
@@ -39,7 +53,7 @@ const UpdateCampaign = () => {
       <div className="card w-full max-w-xl bg-white shadow-lg rounded-lg p-4">
         <h1 className="text-lg font-bold text-center mb-4"> Update Campaign</h1>
         <form onSubmit={handleUpdate}  className="space-y-3">
-          {/* Image URL */}
+          
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Image URL</span>
@@ -89,8 +103,7 @@ const UpdateCampaign = () => {
               <option value="creative ideas">Creative Ideas</option>
             </select>
           </div>
-
-          {/* Description */}
+ 
           <div className="form-control">
             <label className="label">
               <span className="label-text font-medium">Description</span>

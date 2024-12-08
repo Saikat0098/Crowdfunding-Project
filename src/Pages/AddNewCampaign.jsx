@@ -34,7 +34,7 @@ const AddNewCampaign = () => {
           icon: 'success',
           confirmButtonText: 'Cool'
         })
-        navigate('/allCampaign')
+        navigate('/')
        }
         
        

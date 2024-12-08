@@ -63,7 +63,9 @@ import NotFound from "../Pages/NotFound";
 
             {
                 path:'campaignDetails/:_id' , 
-                element:<CampaignDetails></CampaignDetails> , 
+                element:<PrivetRout>
+                    <CampaignDetails></CampaignDetails>
+                </PrivetRout> , 
                 loader: ()=> fetch(`https://help-people-server-side.vercel.app/addCampaignData/`)
             } , 
             {

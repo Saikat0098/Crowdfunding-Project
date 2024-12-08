@@ -13,7 +13,7 @@ const AllCampaign = () => {
   };
 
   return (
-    <div className="p-4 bg-blue-100 min-h-screen flex flex-col items-center">
+    <div className="p-4 bg-blue-100 min-h-screen flex flex-col mt-28 items-center">
       <div className="w-full max-w-6xl">
        
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">

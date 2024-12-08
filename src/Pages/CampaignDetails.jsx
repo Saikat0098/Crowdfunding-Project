@@ -51,9 +51,9 @@ const CampaignDetails = () => {
  
 
   return (
-    <div className="flex justify-center py-6">
+    <div className="flex justify-center mt-28 py-6">
       <div className="group relative bg-gradient-to-b from-white to-gray-50 w-full max-w-2xl shadow-xl rounded-2xl overflow-hidden transform transition duration-500 hover:-translate-y-3 hover:shadow-2xl">
-        {/* Image Section */}
+        
         <figure className="relative h-72 md:h-96 overflow-hidden">
           <img
             src={thumbnail}
@@ -65,7 +65,7 @@ const CampaignDetails = () => {
           </div>
         </figure>
 
-        {/* Card Content */}
+ 
         <div className="p-6 md:p-8 space-y-6">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 group-hover:text-blue-600 transition duration-300">
             {title}
@@ -83,8 +83,7 @@ const CampaignDetails = () => {
             </span>
           </div>
         </div>
-
-        {/* Footer Action */}
+ 
         <div className="px-6 md:px-8 py-4 bg-gray-100 border-t">
           <Link>
             <button onClick={handelDonation} className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-lg font-medium py-3 rounded-md shadow-md transition duration-300">

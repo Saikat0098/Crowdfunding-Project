@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importing icons for showing/hiding password
+import { FaEye, FaEyeSlash } from "react-icons/fa";  
 import toast from "react-hot-toast";
 
 const SignUp = () => {
   const [error, setError] = useState("");
-  const [passwordVisible, setPasswordVisible] = useState(false); // State for password visibility
-  const { createNewUser, setUser, updateUserProfile, googleLogin } = useContext(AuthContext);
+  const [passwordVisible, setPasswordVisible] = useState(false);  
+  const { createNewUser, setUser, updateUserProfile, googleLogin , loading , setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -31,12 +31,12 @@ const SignUp = () => {
         setUser(user);
         navigate(location?.state ? location.state : location.state='/')
         toast.success("Successful")
-
+          
 
         updateUserProfile({ displayName: name, photoURL: photo })
           .then((result) => {})
           .catch((err) => {
-            console.log(err);
+            setLoading(false)
           });
       });
 
@@ -115,7 +115,7 @@ const SignUp = () => {
               <label className="text-xs text-red-400">{error}</label>
               <div
                 className="absolute right-3 top-3 cursor-pointer"
-                onClick={() => setPasswordVisible(!passwordVisible)} // Toggle visibility
+                onClick={() => setPasswordVisible(!passwordVisible)} 
               >
                 {passwordVisible ? <FaEyeSlash /> : <FaEye />} {/* Show or hide password */}
               </div>

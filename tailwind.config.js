@@ -10,4 +10,11 @@ export default {
   plugins: [
     require('daisyui'),
   ],
+  daisyui: {
+    themes: [
+      "light", // Default light theme
+      "dark",  // Dark theme
+      "synthwave", // Additional theme you want to toggle
+    ],
+  },
 }

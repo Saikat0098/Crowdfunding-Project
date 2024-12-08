@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 const MainLayout = () => {
     return (
-       <div className='border border-solid border-red-700'>
+       <div>
         <div>
         <Toaster></Toaster>
         </div>

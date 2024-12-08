@@ -3,6 +3,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -40,14 +41,23 @@ const Navbar = () => {
       </ul>
 
       {user?.email ? (
-        <div className="flex space-x-5">
-          <img src={user?.photoURL} alt="Profile" className="w-8 h-8 rounded-full" />
-          <button
-            onClick={logOut}
-            className="py-[7px] text-[1rem] px-[16px] rounded-full capitalize bg-[#3B9DF8] text-white hover:bg-blue-400 transition-all duration-300"
-          >
-            Sign Out
-          </button>
+        <div className="flex items-center space-x-5 group">
+          <div className="relative">
+            <img
+              src={user?.photoURL}
+              alt="Profile"
+              className="w-8 h-8 rounded-full cursor-pointer"
+            />
+            <button
+              onClick={logOut}
+              className="absolute top-10 w-28 left-1/2 transform -translate-x-1/2 bg-[#3B9DF8] text-white text-sm px-4 py-2  rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 "
+            >
+              Log Out
+              
+             
+            </button>
+          </div>
+          <ThemeToggle />
         </div>
       ) : (
         <div className="items-center gap-[10px] flex">
@@ -61,6 +71,7 @@ const Navbar = () => {
               Sign up
             </button>
           </Link>
+          <ThemeToggle />
         </div>
       )}
 
