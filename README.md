@@ -28,4 +28,4 @@ Easy Request System: Users in need can request specific clothing items.
 User-Friendly Experience: Accessible design to ensure everyone can participate.
 Community Impact: Foster a positive impact by connecting donors with recipients in local communities.
 
-**Projects Link :** https://help-people-56c21.web.app/
+**Projects Link :** [https://help-people-56c21.web.app/](https://vocal-cuchufli-88c3e4.netlify.app/)
